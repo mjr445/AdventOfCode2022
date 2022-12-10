@@ -1,8 +1,10 @@
+from sys import argv
+
 def main():
     current_max = -1
     total_calories = 0
     first = second = third = -1
-    with open('1.txt', 'r') as input_file:
+    with open(argv[1], 'r', encoding='utf8') as input_file:
         for line in input_file.readlines():
             line_stripped = line.strip()
             if line_stripped:

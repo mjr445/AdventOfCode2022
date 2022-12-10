@@ -5,6 +5,7 @@
 # Win  = 6 pt
 # Draw = 3 pt
 # Lose = 0 pt
+from sys import argv
 
 def main():
     game_tree = {
@@ -25,7 +26,7 @@ def main():
         }
     }
     total_score = 0
-    with open('2.txt', 'r') as input_file:
+    with open(argv[1], 'r', encoding='utf8') as input_file:
         for line in input_file.readlines():
             opponent_move, player_move = line.strip().split()
             total_score += game_tree[opponent_move][player_move]
